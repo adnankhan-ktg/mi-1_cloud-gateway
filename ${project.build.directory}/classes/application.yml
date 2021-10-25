@@ -29,16 +29,6 @@ spring:
                 name: EMPLOYEE-SERVICE
                 fallbackuri: forward:/employeeServiceFallBack
 
-        - id: USER-SERVICE
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/user/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: USER-SERVICE
-                fallbackuri: forward:/userServiceFallBack
-
 
 
 hystrix:
